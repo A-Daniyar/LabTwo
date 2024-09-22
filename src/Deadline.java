@@ -1,6 +1,7 @@
 import jdk.jfr.Event;
 
 class Deadline extends Event implements Completable  {
+
     private boolean complete; //Holds a boolean whether the task this deadline tracks is complete.
 
     @Override
