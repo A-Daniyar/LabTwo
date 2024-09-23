@@ -1,6 +1,9 @@
 import javax.swing.*;
+import java.time.LocalDateTime;
 
 public class EventPlanner {
+
+
     public static void main(String[] args) {
         JFrame frame = new JFrame("Event Planner");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -12,8 +15,8 @@ public class EventPlanner {
         frame.setVisible(true);
     }
 
-    static void addDefaultEvents(EventPanel events){
-        events.addEvent(new Deadline("Deadline test", new (System.currentTimeMillis()+86400000)));
-        events.addEvent(new Meeting("Meeting test", new LocalDateTime))
+    static void addDefaultEvents(EventListPanel events){
+        events.addEvent(new Deadline("Deadline test", LocalDateTime.now()));
+        events.addEvent(new Meeting("Meeting test", LocalDateTime.now().minusHours(2),LocalDateTime.now(),"Location Test"));
     }
 }

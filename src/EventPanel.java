@@ -1,5 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionListener;
 
 public class EventPanel extends JPanel {
     Event event;
@@ -11,20 +12,27 @@ public class EventPanel extends JPanel {
 
         completeButton = new JButton("Complete");
         completeButton.setEnabled(event instanceof Completable);
+        JLabel completeLable = (new JLabel("Complete: " + ((Completable)event).isComplete()));
+        completeButton.addActionListener(e -> {
+            ((Completable)event).complete();
+            completeLable.setText("Complete: " + ((Completable)event).isComplete());
+        });
 
         add(new JLabel("Name: " + event.getName()));
         add(new JLabel("Date: " + event.getDateTime()));
+        add(completeLable);
+
         if (event instanceof Meeting) {
             Meeting meeting = (Meeting) event;
-            add(new Jlabel("Duration: " + meeting.getDuration() + " minutes"));
-            add(new Jlabel("Location: " + meeting.getLocation()));
+            add(new JLabel("Duration: " + meeting.getDuration() + " minutes"));
+            add(new JLabel("Location: " + meeting.getLocation()));
 
         }
         add(completeButton);
-        updateUrgency();
+      //  updateUrgency();
     }
 
-    public void updateUrgency(){
+  /*  public void updateUrgency(){
         if (event instanceof Completable && ((Completable) event).isComplete()) {
             completeButton.setText("Complete");
             setBackground(Color.green);
@@ -32,5 +40,5 @@ public class EventPanel extends JPanel {
         else {
             setBackground(Color.red);
         }
-    }
+    }*/
 }

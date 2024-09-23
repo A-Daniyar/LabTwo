@@ -20,6 +20,8 @@ public class EventListPanel extends JPanel {
         add(addEventButton, BorderLayout.SOUTH);
     }
 
+   // dateComboBox = new JComboBox(SORT_OPTIONS);
+
     public void addEvent(Event event) {
         events.add(event);
         displayPanel.add(new EventPanel(event));

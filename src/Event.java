@@ -1,10 +1,12 @@
 import java.time.LocalDateTime;
 
-abstract class Event implements Comparable<Event> {
+public abstract class Event implements Comparable<Event> {
     String name; //name of the event
     LocalDateTime dateTime; //the time and date the event starts
 
-    public abstract String getName(); //Abstract method that returns the name
+    public String getName(){
+        return name;
+    } //Abstract method that returns the name
 
     public LocalDateTime getDateTime() { // Method that returns the dateTime
         return dateTime;
