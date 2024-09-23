@@ -20,7 +20,7 @@ public class Meeting extends Event implements Completable {
         return endDateTime;
     }
     public Duration getDuration() { //returns the duration of the meeting (dateTime - endDateTime)
-       return Duration.between(dateTime, endDateTime);
+            return Duration.between(dateTime, endDateTime);
     }
 
     public String getLocation() { //returns the location of the meeting
