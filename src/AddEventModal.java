@@ -1,23 +1,24 @@
 import javax.swing.*;
 import java.awt.*;
-import javax.swing.*;
-import java.awt.event.*;
 import java.time.LocalDateTime;
 
+//Creates an Event.
 public class AddEventModal extends JDialog {
-    EventListPanel eventListPanel;
+   EventListPanel eventListPanel;
 
     public AddEventModal(EventListPanel eventListPanel) {
-        this.eventListPanel = eventListPanel;
+       this.eventListPanel = eventListPanel;
         setTitle("Add Event");
-        setSize(400,200);
+        setSize(600,300);
         setLayout(new GridLayout(0,1));
 
+        //creates a text fields.
         JTextField nameField = new JTextField();
         JTextField yearField = new JTextField();
         JTextField monthField = new JTextField();
         JTextField dayField = new JTextField();
 
+        //creates a names for each text fields.
         add(new JLabel("Modal Name:"));
         add(nameField);
         add(new JLabel("Year:"));
@@ -27,6 +28,7 @@ public class AddEventModal extends JDialog {
         add(new JLabel("Day:"));
         add(dayField);
 
+        //adding the event to the calendar.
         JButton addButton = new JButton("Add");
         addButton.addActionListener(e -> {
             String name = nameField.getText();

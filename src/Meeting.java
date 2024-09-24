@@ -2,7 +2,6 @@
 import java.time.Duration;
 import java.time.LocalDateTime;
 
-
 public class Meeting extends Event implements Completable {
     private LocalDateTime endDateTime; //The time the meeting is over
     private String location; //Represents the location of the event.

@@ -1,11 +1,10 @@
 import javax.swing.*;
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 
 public class EventPlanner {
 
-
     public static void main(String[] args) {
+        //main method of GUI that creates a JFrame and adds an EventListPanel
         JFrame frame = new JFrame("Event Planner");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(800, 600);
@@ -17,7 +16,10 @@ public class EventPlanner {
     }
 
     static void addDefaultEvents(EventListPanel events){
-        events.addEvent(new Deadline("Deadline test", LocalDateTime.now()));
-        events.addEvent(new Meeting("Meeting test", LocalDateTime.now().minusHours(2),LocalDateTime.now(),"Location Test"));
+        //adds some default events to the EventPanel
+        events.addEvent(new Deadline("Deadline test",
+                LocalDateTime.now()));
+        events.addEvent(new Meeting("Meeting test",
+                LocalDateTime.now().minusHours(2),LocalDateTime.now(),"Location Test"));
     }
 }
