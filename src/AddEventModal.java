@@ -11,7 +11,7 @@ public class AddEventModal extends JDialog {
         this.eventListPanel = eventListPanel;
         setTitle("Add Event");
         setSize(400,200);
-        setLayout(new GridLayout(1,2));
+        setLayout(new GridLayout(0,1));
 
         JTextField nameField = new JTextField();
         JTextField yearField = new JTextField();

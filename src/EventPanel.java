@@ -8,7 +8,7 @@ public class EventPanel extends JPanel {
 
     public EventPanel(Event event) {
         this.event = event;
-        this.setLayout(new GridLayout(2, 1));
+        this.setLayout(new GridLayout(2, 2));
 
         completeButton = new JButton("Complete");
         completeButton.setEnabled(event instanceof Completable);
